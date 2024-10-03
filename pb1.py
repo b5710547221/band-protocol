@@ -4,7 +4,6 @@ def shoot_or_retail(word):
     countR = 0
     sumR = 0
     sumS = 0
-    countSR = True
     #start iteration
     for letter in range(0,len(word)-1):
         status="not ok" #initial array
@@ -20,9 +19,9 @@ def shoot_or_retail(word):
                 status="ok" 
                 countR = 0
                 countS = 0
-                continue
                 if (word[0]=="R" or word[len(word)-1] == "S"):
                     break
+                continue
             #caseRR
             elif word[letter+1]=="R":
                 if word[len(word)-1] == "R":
@@ -50,7 +49,8 @@ def shoot_or_retail(word):
                 if word[len(word)-1] == "R":
                     countR =countR +1
                     sumR = sumR+1
-                
+                if (word[0]=="R" or word[len(word)-1] == "S"):
+                    break
                 status="ok"
                 continue
     
